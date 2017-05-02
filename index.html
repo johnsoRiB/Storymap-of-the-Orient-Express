@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Orient Express</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--meta data for sharing links on Facebook-->
+    <meta property="og:title" content="The major cities in Oregon" />
+    <meta property="og:url" content="http://cdn.rawgit.com/jakobzhao/storymap/master/example/video/index.html" />
+    <meta property="og:description" content="This is an example of map story." />
+    <meta property="og:image" content="storymap-master/img/social.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+    <!--animation-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!--facebook and info icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--use a better font for this web map-->
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="storymap-master/dist/storymap.css">
+    <!--add favicon for the web page-->
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <style>
+        .end-background-img {
+            background: url(img/Orient-Express.jpg) no-repeat center center fixed;
+        }
+    </style>
+
+    <!--add required libraries-->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--story map plugin-->
+    <script src="storymap-master/dist/storymap.js"></script>
+
+    <!-- bing map -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Promise"></script>
+    <script src="http://gmaclennan.github.io/leaflet-bing-layer/leaflet-bing-layer.js"></script>
+
+    <!-- mini globle map -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="storymap-master/js/globeminimap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 main">
+            <section data-scene="overview">
+                <img class="background-fullscreen-setting" src="img/train.jpg" alt="Orient Express">
+
+                <div class= "background-fullscreen-setting text-responsive text-center" >
+                    <h3><large style="color: #E2DD36">The Orient Express</large></h3>
+                    <h3><small style="color: #E2DD36">This Web Map introduces the famous Orient Express</small></h3>
+                </div>
+            </section>
+
+            <section data-scene="Route" style="height: auto">
+                <h2>The Orient Express</h2>
+                <p>The Orient Express is one of the most historic trains in history. First running in 1883, the Orient Express was the standard for luxurious accommodation during the golden age of travel.</p>
+                <p>Over the course of its history the train had a variety of routes it took. This story maps takes a few of those routes and their stops, combining them to recreate this magnificent journey.</p>
+                <p>While the original train no longer runs, one can be retrace the tracks of this famous train today. This storymap serves to show the Orient Express on its way from London to Istanbul.</p>
+                <img src="img/belmond.jpg" class="img-responsive" alt="responsive image" alt-text="The Orient Express">
+            </section>
+
+            <section data-scene="London" style="height: auto">
+                <h2>London</h2>
+                <p>This journey begins in London at Victoria Station. Here riders would depart for Calais, the first stop on this trip.</p>
+                <p>London was not part of the original Orient Express in 1883. It was added in the 1930s, the peak of the Orient Express.</p>
+                <p>Before arriving in Calais, the passenger cars had to be physically loaded onto a ferry that would then take them across the English Channel into France.</p>
+                <img src="img/victoria.jpg" class="img-responsive" alt="responsive image" alt-text="Victoria Station, London">
+            </section>
+
+            <section data-scene="Paris" style="height: auto">
+                <h2>Paris</h2>
+                <p>Once in Calais, rider would change to sleeper cars before continuing onto Paris, the first major stop.</p>
+                <p>Rider would arrive at Gare de Paris-Est station in Paris. From here it is a three night trip to Istanbul. Stops in Munich and Vienna before Budapest were added for the additional passenger cars who carried daily riders.</p>
+                <img src="img/paris_station.jpg" class="img-responsive" alt="responsive image" alt-text="Gare de Paris-Estn">
+            </section>
+
+            <section data-scene="Munich" style="height: auto">
+                <h2>Munich</h2>
+                <p>Munich was the first stop after Paris. This was only a quick stop to allow daily passengers to disembark.</p>
+                <p>To get to Munich, the train has to cross the French Alps through Strasbourg.</p>
+                <img src="img/french_alps.jpg" class="img-responsive" alt="responsive image" height="200px" width="500px "alt-text="French Alps, near Strasbourg">
+            </section>
+
+            <section data-scene="Vienna" style="height: auto">
+                <h2>Vienna</h2>
+                <p>Like Munich, Vienna was another quick stop for daily passengers. Between Munich and Vienna the Orient Express would pass through luscious green valleys.</p>
+                <img src="img/Austria.jpg" class="img-responsive" alt="responsive image" width="500px" alt-text="A modern train passing through the valley">
+            </section>
+
+            <section data-scene="Budapest" style="height: auto">
+                <h2> Budapest</h2>
+                <p>Once in Budapest, more sleepers were added for the rest of the trip to Istanbul. The only major stop before Istanbul was Belgrade. Pictured is Keleti Station, where the Orient Express would stop.</p>
+                <img src="img/budapest.jpg" class="img-responsive" alt="responsive image" alt-text="Keleti Station, Budapest">
+            </section>
+
+            <section data-scene="Belgrade" style="height: auto">
+                <h2>Belgrade</h2>
+                <p>The last major stop before Istanbul was Belgrade. Here the remaining passenger cars were shunted, reattached to other trains headed to other destinations. Only sleeping cars along with the other amenities accompanied the train to Istanbul.</p>
+                <img src="img/belgrade.jpg" class="img-responsive" alt="responsive image" alt-text="Belgrade, Serbia">
+                <p></p>
+            </section>
+
+            <section data-scene="Istanbul" style="height: auto">
+                <h2>Istanbul</h2>
+                <p>The Orient Express ended its journey in Istanbul, what was know as Constantinople at the time. Here ay Sirkeci Terminal, all passengers departed and other boarded for the return trip to Paris and later London.</p>
+                <img src="img/istanbul_station.jpg" class="img-responsive" alt="responsive image" alt-text="Sirkeci Terminal, Istanbul">
+                <p>The Orient Express continued to ferry to passengers until December of 2009, surpassing 100 year of service. While the train was interrupted multiple times because of World War I and World War II it still found away to exist despite the introduction of the modern airlines. The original direct route no longer exists but it can be recreated on modern routes.</p>
+                <p>Beyond the rails the Orient Express has become famous for its setting. Agatha Cristies novel 'Murder on the Orient Express' popularized the train into modern culture. The luxury and glamour associated with the Orient Express will see its legacy continued to live on. </p>
+
+            </section>
+
+            <section data-scene="end">
+                <div class= "end-background-img background-fullscreen-setting text-center" >
+                    <br/>
+                    <h3><large style="color: #DAD52A">Thanks for watching!!!</large></h3>
+                    <h3><small style="color: #DAD52A">Download Storymap.js from http://github.com/jakobzhao/storymap</small></h3>
+                </div>
+            </section>
+
+        </div>
+        <!--map div-->
+        <div id="map" class="col-sm-6 col-md-8 sidebar"></div>
+    </div>
+    <!--add a scrolling down arrow-->
+    <div class="animated zoomIn infinite glyphicon glyphicon-menu-down arrow-down"></div>
+    <!--add a navigation bar-->
+    <div class="navbar text-center"></div>
+
+    <!--add a info model -->
+    <div id="loading">
+        <i class="animated zoomIn infinite glyphicon glyphicon-globe"></i>
+    </div>
+
+    <dl>
+        <dt>
+            <!--facebook icon-->
+            <a class="fa fa-facebook-square btn" href="https://facebook.com/sharer.php?u=http://cdn.rawgit.com/jakobzhao/storymap/master/fullpage.html" target="_blank"></a>
+        </dt>
+        <dt>
+            <!--facebook icon-->
+            <a class="fa fa-git-square btn" href="https://github.com/jakobzhao/storymap" style="top:40px" target="_blank"></a>
+        </dt>
+        <dt>
+            <!--info icon-->
+            <i class="fa fa-file-text-o btn" style="top:60px" data-toggle="modal" data-target="#info-modal"></i>
+        </dt>
+    </dl>
+
+    <!--the info page-->
+    <div class="modal fade" id="info-modal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This is a web map of the Orient Express one of the histories most famous train routes. The story map library is derived from the storymap plugin for leaflet at <a>http://atlefren.github.io/storymap/</a>, and its functionality relies on both leaflet and Boostrap.</p>
+                    <p><b>storymap.js</b> | Released Date: 02/20/2017 | Version: 2.1 | MIT License </p>
+                    <p><b>Author: Riley Johnson</b> | College of Earth, Ocean, Atmospheric Science | Oregon State University </p>
+                    <p>The context about the Orient Express was collected from Wikipedia.</p>
+                    <p>The favicon image was acquired from <a>https://images.google.com/</a></p>
+                    <p>This story map uses geospatial data from mapbox, and Google My Maps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- main javascript -->
+<script type="text/javascript">
+
+    /**
+     * Created by jakob on 4/20/2017.
+     */
+        // Create Legend Contents in html format
+    var county_legend ='<i style="background: black; opacity: 0.5"></i><p><b>Counties</b></p>';
+    var corvallis_admin_legend = '<i style="background: orange; opacity: 0.5"></i><p><b>Corvallis</b></p>';
+    var forest_legend = '<i style="background: green; opacity: 0.5"></i><p><b>Forest</b></p>';
+
+    // For each layer, the first variable is the layer, the second is the legend. The layer variable can be any kinds of layers that leaflet.js supports.
+    // var layers = {
+    //      'layer1': [layer1, legend1]
+    //      'layer2': [layer2, legend2]
+    //      ...
+    // }
+
+    var stops = L.geoJson.ajax('assets/stops.geojson', {
+        pointToLayer: function (feature, latlng) {
+
+            delay = Math.floor((126 + latlng.lng) / 10 * 2000);
+            //delay =Math.floor(Math.random() * 400);
+
+            return L.marker(latlng, {bounceOnAdd: true,  bounceOnAddOptions: {duration: 200, height: window.innerHeight, delay:delay}, icon: L.divIcon({className: 'glyphicon glyphicon-remove-circle marker-icon'})});
+        },
+        onEachFeature: function (feature, layer) {
+            layer.bindTooltip(feature.properties.Name, {sticky: true, className: "feature-tooltip"});
+        }
+    });
+
+
+    var layers = {
+        'layer 1': [ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {id: 'mapbox.streets'})],
+        'layer 2': [stops],
+        'layer 6': [ L.geoJson.ajax('assets/route1.geojson', county_legend)],
+        'layer 7': [ L.geoJson.ajax('assets/route2.geojson', county_legend)],
+        'layer 8': [ L.geoJson.ajax('assets/route3.geojson', county_legend)]
+    };
+
+
+    var scenes = {
+        overview: {lat: 48.2442461, lng: 5.0472474, zoom: 5, position: 'fullpage', name: 'Cover Page', layers: ['layer 1']},
+        Route: {lat: 48.2442461, lng: 2.572474, zoom: 4.5, name: 'Route', layers: ['layer 1', 'layer 2', 'layer 6', 'layer 7', 'layer 8']},
+        London: {lat: 51.3690158, lng: -.5347344, zoom: 9, name: 'London', layers: ['layer 1', 'layer 2','layer 6']},
+        Paris: {lat: 48.80000, lng: 1.11608596601, zoom: 8, name: 'Paris', layers: ['layer 1', 'layer 2','layer 6', 'layer 7']},
+        Munich: {lat: 48.50000, lng: 10.8340040660, zoom: 8, name: 'Munich', layers: ['layer 1', 'layer 2','layer 6','layer 7']},
+        Vienna: {lat: 48.55180531662623, lng: 14.754309162890763, zoom: 8, name: 'Vienna', layers: ['layer 1', 'layer 2', 'layer 7']},
+        Budapest: {lat: 47.643683519, lng: 17.940343958, zoom: 8, name: 'Budapest', layers: ['layer 1', 'layer 2','layer 7']},
+        Belgrade: {lat: 45.10000, lng: 17.50000, zoom: 7, name: 'Belgrade', layers: ['layer 1', 'layer 2','layer 7']},
+        Istanbul: {lat: 41.20000, lng: 26.50000, zoom: 8, name: 'Istanbul', layers: ['layer 1', 'layer 2','layer 7', 'layer 8']},
+        end: {name: 'The End', position: 'fullpage'}
+    };
+
+    $('html > head').append($("<style> .marker-icon { color: black; font-size: 20px; text-shadow: 0 0 3px #ffffff;} </style>"));
+    // $('html > head').append($("<style> .marker-icon { color: #0000ff; font-size: 15px; text-shadow:1px 1px 2px #ffffff, 0 0 25px rgba(0,0,255,0.75), 0 0 5px rgba(0,0,139,0.78);} </style>")); // glow effect: https://adventuresinmapping.com/2016/10/17/firefly-cartography/
+
+    $('.main').storymap({
+        scenes: scenes,
+        layers: layers,
+        legend: true, // if you do not want a legend feature, you can simply not define the createLegend function.
+        scale: false,
+        navbar: true,
+
+        createMap: function () {
+            // create a map in the "map" div, set the view to a given place and zoom
+            var map = L.map('map', {zoomControl: false, scrollWheelZoom: false});
+
+            // add an base map, which can be either OSM, mapbox, tilelayer, wmslayer or those designed by yourself.
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+                maxZoom: 18,
+                attribution: '<a href="https://www.mapbox.com/maps/streets/" target="_blank">Mapbox</a>',
+                id: 'mapbox.streets' // ,detectRetina: true
+            }).addTo(map);
+
+            L.control.scale({position: 'bottomright', metric: false}).addTo(map);
+
+            // create a mini globe as the overview map control.
+            var miniMap = new L.Control.GlobeMiniMap({
+                marker:'red',
+                position: 'bottomright'
+            }).addTo(map);
+
+            // hidden the credits, but show in the about page.
+            $(".leaflet-control-attribution").css("display", "Mapbox");
+
+            return map;
+        }
+    });
+</script>
+</body>
+</html>
