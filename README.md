@@ -14,7 +14,7 @@ This storymap uses Storymap.js -- a story map telling library at https://github.
 
 
 
-Link: https://cdn.rawgit.com/johnsoRiB/storymap_lab3_geog472/db442ea3/index.html
+Link: https://cdn.rawgit.com/johnsoRiB/storymap_lab3_geog472/7588a931/index.html
 
 **2. About**
 
