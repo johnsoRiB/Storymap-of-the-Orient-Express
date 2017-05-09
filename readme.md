@@ -14,7 +14,7 @@ This storymap uses Storymap.js -- a story map telling library at [https://github
 
 
 
-Link: 
+Link: https://cdn.rawgit.com/johnsoRiB/Storymap-of-the-Orient-Express/6cf9b7f9/index.html
 
 ## 2. About
 
